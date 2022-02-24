@@ -1,0 +1,82 @@
+package veletlen;
+import java.util.*;
+
+public class Masodfoku {
+
+	 static Scanner input=new Scanner(System.in);
+	
+	
+	public static void main(String[] args) {
+		
+		double a=0, b=0, c=0;
+		boolean ok;
+		do {
+		 System.out.print("Constants of the equation, divided by ',': ");
+		 String inString = input.nextLine();
+		 String[] strArray = inString.split(",");
+		 ok = true;
+		 try {
+		a = Double.parseDouble(strArray[0]);
+		b = Double.parseDouble(strArray[1]);
+		c = Double.parseDouble(strArray[2]);
+		 }
+		 catch (Exception e) {
+		ok = false;
+		 }
+		} while (!ok);
+		
+		System.out.println("a: "+a+" b: "+b+" c: "+c);
+		
+		double d= calcDiscrimant(a,b,c);
+		
+		System.out.println("Discrimant: "+d);
+		
+		System.out.println("Discrimant"+d);
+		
+		if(d<0){
+			System.out.println("No real result.");
+			
+		}else if(d==0){
+			double result=(-1.0*b)/(2.0*a);
+			System.out.println("One result: "+result);
+			
+		}else{
+			
+			double result1=b-Math.sqrt(d);
+			result1/=2.0*a;
+			double result2=b+Math.sqrt(d);
+			result1/=2.0*a;
+			System.out.println("Result 1:"+result1+"Result 2:"+result2);
+		}
+		
+
+	}
+	public static double calcDiscrimant(double a, double b, double c){
+		return Math.pow(b,2)-(4.0*a*c);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
