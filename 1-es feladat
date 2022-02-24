@@ -1,0 +1,95 @@
+package egyes;
+
+import java.util.*;
+
+
+public class Main {
+
+	static Scanner input=new Scanner(System.in);
+	
+	
+	public static void main(String[] args) {
+		
+		int x=ReadInt;(false);
+		String sign=ReadOperation();
+		int y;
+		if(sign.equals("/")) y=ReadInt(true);
+		else y=ReadInt(false); 
+		Print(Calc(x, y, sign));
+		input.close();
+		
+		
+		
+
+	}
+	
+	
+	public static void ReadInt(boolean div){
+		
+		int x;
+		
+		
+			System.out.println("Give me a number");
+			while(!input.hasNextInt()){
+			 
+				{System.out.println("Can't divide by zero!");
+				number=ReadInt(true);
+				}
+				
+				
+				
+				input.next();
+			}
+			number=input.nextInt();
+			
+			
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+	}
+	
+	public static String ReadOperation() 
+	{
+		String sign="";
+		System.out.println("Enter operationsign: ");
+		sign= input.nextLine();
+	if(sign.equals("+") || sign.equals("-") ||
+			sign.equals("/") || sign.equals("*")) {}
+	else{
+		System.out.println("That's not a correct operation sign!");
+		sign=ReadOperation();
+		}
+	return sign;
+	}
+	
+	public static int Calc(int x, int y, String s) 
+	{
+		int out=0;
+		switch(s) {
+		case"+": out=x+y; break;
+		case"-": out=x-y; break;
+		case"/": out=x/y; break;
+		case"*": out=x*y;}
+		return out;}
+	
+	
+	public static void Print (int r) 
+	{System.out.println("Az eredmény: "+r);}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
